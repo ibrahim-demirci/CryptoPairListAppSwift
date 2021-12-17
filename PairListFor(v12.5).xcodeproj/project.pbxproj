@@ -19,6 +19,7 @@
 		0A74F87C276C970600473737 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74F877276C970600473737 /* SceneDelegate.swift */; };
 		0A74F87E276C971A00473737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A74F87D276C971A00473737 /* Main.storyboard */; };
 		0A74F880276C972A00473737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A74F87F276C972A00473737 /* LaunchScreen.storyboard */; };
+		0A74F887276CC53000473737 /* DoubleScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74F886276CC53000473737 /* DoubleScaler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0A74F877276C970600473737 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A74F87D276C971A00473737 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0A74F87F276C972A00473737 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A74F886276CC53000473737 /* DoubleScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleScaler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		0A74F881276CB10100473737 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A74F885276CC51400473737 /* DoubleScaler */,
 				0A74F884276CB15400473737 /* ActivityIndicator */,
 			);
 			path = Extensions;
@@ -147,6 +150,14 @@
 				0A74F870276C96F700473737 /* Util.swift */,
 			);
 			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		0A74F885276CC51400473737 /* DoubleScaler */ = {
+			isa = PBXGroup;
+			children = (
+				0A74F886276CC53000473737 /* DoubleScaler.swift */,
+			);
+			path = DoubleScaler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 				0A74F87B276C970600473737 /* AppDelegate.swift in Sources */,
 				0A74F86C276C96E700473737 /* Ticker.swift in Sources */,
 				0A74F871276C96F700473737 /* Util.swift in Sources */,
+				0A74F887276CC53000473737 /* DoubleScaler.swift in Sources */,
 				0A74F87C276C970600473737 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

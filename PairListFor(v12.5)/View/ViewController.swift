@@ -93,7 +93,8 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         if let dailyPercent = ticker.dailyPercent{
             cell.dailyPercentText.text = "%\(dailyPercent)"
         }
-        
+        let volumeString = ticker.volumeString()
+        cell.volumeText.text = volumeString
     }
 }
 

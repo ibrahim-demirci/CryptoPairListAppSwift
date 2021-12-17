@@ -19,9 +19,47 @@ struct TickerResponse: Decodable {
 struct Ticker: Decodable {
     let pair : String?
     let last : Double?
+    let volume: Double?
     let numeratorSymbol: String?
     let denumeratorSymbol: String?
     let dailyPercent : Double?
+    
+    func volumeString() -> String{
+        if let volume = volume{
+            return formatNumber(volume)
+        }
+        else {
+            return "Not"
+        }
+    }
+
+    func formatNumber(_ n: Double) -> String {
+        let num = abs(Double(n))
+        let sign = (n < 0) ? "-" : ""
+
+        switch num {
+        case 1_000_000_000...:
+            var formatted = num / 1_000_000_000
+            formatted = formatted.reduceScale(to: 1)
+            return "\(sign)\(formatted)B"
+
+        case 1_000_000...:
+            var formatted = num / 1_000_000
+            formatted = formatted.reduceScale(to: 1)
+            return "\(sign)\(formatted)M"
+
+        case 1_000...:
+            var formatted = num / 1_000
+            formatted = formatted.reduceScale(to: 1)
+            return "\(sign)\(formatted)K"
+
+        case 0...:
+            return "\(Int(n))"
+
+        default:
+            return "\(sign)\(n)"
+        }
+    }
 }
 
 //struct Root  {
