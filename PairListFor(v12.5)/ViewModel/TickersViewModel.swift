@@ -10,7 +10,6 @@ import Foundation
 
 struct TickersTableViewModel{
     let TickersList : [Ticker]
-    
 }
 extension TickersTableViewModel{
     func numberOfRowsInSection() -> Int{
@@ -25,22 +24,6 @@ extension TickersTableViewModel{
 
 struct TickerViewModel{
     let ticker : Ticker
-    
-    var pair : String?{
-        return self.ticker.pair
-    }
-    var numerator : String?{
-        return self.ticker.numeratorSymbol
-    }
-    var last : Double?{
-        return self.ticker.last
-    }
-    var denumerator : String?{
-        return self.ticker.denumeratorSymbol
-    }
-    var dailyPercent : Double?{
-        return self.ticker.dailyPercent
-    }
     
 }
 

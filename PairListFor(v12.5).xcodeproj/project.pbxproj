@@ -68,9 +68,10 @@
 		0A74F852276C960300473737 /* PairListFor(v12.5) */ = {
 			isa = PBXGroup;
 			children = (
+				0A74F882276CB11B00473737 /* Cells */,
+				0A74F881276CB10100473737 /* Extensions */,
 				0A74F87F276C972A00473737 /* LaunchScreen.storyboard */,
 				0A74F87D276C971A00473737 /* Main.storyboard */,
-				0A74F870276C96F700473737 /* Util.swift */,
 				0A74F872276C970600473737 /* View */,
 				0A74F86D276C96ED00473737 /* ViewModel */,
 				0A74F867276C96DB00473737 /* Service */,
@@ -109,12 +110,43 @@
 			isa = PBXGroup;
 			children = (
 				0A74F873276C970600473737 /* ViewController.swift */,
-				0A74F874276C970600473737 /* PairTableViewCell.xib */,
-				0A74F875276C970600473737 /* PairTableViewCell.swift */,
 				0A74F876276C970600473737 /* AppDelegate.swift */,
 				0A74F877276C970600473737 /* SceneDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0A74F881276CB10100473737 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A74F884276CB15400473737 /* ActivityIndicator */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A74F882276CB11B00473737 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A74F883276CB12200473737 /* PairCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A74F883276CB12200473737 /* PairCells */ = {
+			isa = PBXGroup;
+			children = (
+				0A74F874276C970600473737 /* PairTableViewCell.xib */,
+				0A74F875276C970600473737 /* PairTableViewCell.swift */,
+			);
+			path = PairCells;
+			sourceTree = "<group>";
+		};
+		0A74F884276CB15400473737 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				0A74F870276C96F700473737 /* Util.swift */,
+			);
+			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

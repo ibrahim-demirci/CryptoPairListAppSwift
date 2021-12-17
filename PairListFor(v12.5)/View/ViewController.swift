@@ -9,8 +9,6 @@ import UIKit
 
 class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
-    
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
     private var isFirstRequest = true
@@ -28,18 +26,15 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         updateButtonBorders()
         getTickers()
-       
     }
     
     func updateButtonBorders(){
-        
         for i in 1..<6{
             if let button = view.viewWithTag(i) as? UIButton {
                 button.layer.cornerRadius = 8
                 button.titleEdgeInsets = UIEdgeInsets(top: 4, left: 7, bottom: 4, right: 7)
             }
         }
-        
     }
     
     // Get tickers from api
@@ -57,7 +52,6 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
                 }
             }
         } whenError: { error in
-            print("error catched")
             DispatchQueue.main.async {
                 self.isFirstRequest = !self.isFirstRequest
                 self.removeSpinner()
@@ -76,8 +70,6 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         self.present(alert, animated: true,completion: nil)
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tickersTableViewModel == nil ? 0 : self.tickersTableViewModel.numberOfRowsInSection()
     }
@@ -86,20 +78,22 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "pairCell", for: indexPath) as! PairTableViewCell
         let tickerViewModel = self.tickersTableViewModel.tickerAtIndexPath(indexPath.row)
-        
-        if let numerator = tickerViewModel.numerator{
-            cell.numeratorText.text = numerator
-        }
-        if let last = tickerViewModel.last{
-            cell.lastText.text = "₺\(last)"
-        }
-        if let dailyPercent = tickerViewModel.dailyPercent{
-            cell.dailyPercentText.text = "%\(dailyPercent)"
-        }
+        updateCellVariables(ticker: tickerViewModel.ticker,cell: cell)
         
         return cell
     }
-
-
+    
+    func updateCellVariables(ticker: Ticker, cell: PairTableViewCell){
+        if let numerator = ticker.numeratorSymbol{
+            cell.numeratorText.text = numerator
+        }
+        if let last = ticker.last{
+            cell.lastText.text = "₺\(last)"
+        }
+        if let dailyPercent = ticker.dailyPercent{
+            cell.dailyPercentText.text = "%\(dailyPercent)"
+        }
+        
+    }
 }
 
