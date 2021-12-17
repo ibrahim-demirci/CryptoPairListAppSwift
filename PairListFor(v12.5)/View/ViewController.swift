@@ -44,12 +44,13 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     
     // Get tickers from api
     func getTickers(){
-        WebService().getTickers(isFirstRequest: isFirstRequest) { tickerList in
-            if let tickerList = tickerList {
+        WebService().getTickers(isFirstRequest: isFirstRequest) { response in
+            if let response = response {
                  
                 self.isFirstRequest = !self.isFirstRequest
-                
-                self.tickersTableViewModel = TickersTableViewModel(TickersList: tickerList)
+                if let data = response.data{
+                    self.tickersTableViewModel = TickersTableViewModel(TickersList: data)
+                }
                 DispatchQueue.main.async {
                     self.removeSpinner()
                     self.tableView.reloadData()
@@ -61,13 +62,9 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
                 self.isFirstRequest = !self.isFirstRequest
                 self.removeSpinner()
                 self.alertMessage(title: "Fail", message: "Fail to load data")
-                
             }
-            
         }
-
     }
-    
     
     // Show alert dialog
     func alertMessage(title: String, message: String){
@@ -77,7 +74,6 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         }
         alert.addAction(tryAgainButton)
         self.present(alert, animated: true,completion: nil)
-        
     }
     
     

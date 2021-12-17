@@ -73,7 +73,6 @@
 				0A74F870276C96F700473737 /* Util.swift */,
 				0A74F872276C970600473737 /* View */,
 				0A74F86D276C96ED00473737 /* ViewModel */,
-				0A74F86A276C96E700473737 /* Model */,
 				0A74F867276C96DB00473737 /* Service */,
 				0A74F85C276C960400473737 /* Assets.xcassets */,
 				0A74F861276C960400473737 /* Info.plist */,
@@ -84,6 +83,7 @@
 		0A74F867276C96DB00473737 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0A74F86A276C96E700473737 /* Model */,
 				0A74F868276C96DB00473737 /* WebService.swift */,
 			);
 			path = Service;
